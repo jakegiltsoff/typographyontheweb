@@ -1,0 +1,18 @@
+// Header styles
+// ---------------------------------------
+
+.global-header {
+  background: $head;
+
+  h2 {
+    color: $linkColour;
+    font-weight: map-get($headingtype, bold);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+
+    &:after {
+      content: ' —';
+      display: inline;
+    }
+  }
+}

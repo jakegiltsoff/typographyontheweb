@@ -1,0 +1,88 @@
+// Global styles
+// ---------------------------------------
+
+body {
+  background-color: $backgroundColour;
+  color: $bodyColour;
+  overflow-x: hidden;
+}
+
+.section {
+  padding: 2rem 0;
+
+  & + .section {
+    padding-top: 0;
+  }
+
+  @include breakpoint(break-1) {
+    padding: 4rem 0;
+  }
+
+  @include breakpoint(break-2) {
+    padding: 5rem 0;
+  }
+
+  .link {
+    display: inline-block;
+    @include sassline(eta, $headingtype, 2, 2, all);
+
+    &:before {
+      content: '\2192  ';
+      display: inline;
+    }
+  }
+}
+
+img:not(.slider-image) {
+  -ms-interpolation-mode: bicubic;
+
+  height: auto;
+  vertical-align: middle;
+  width: 100%;
+
+  @include breakpoint(break-1) {
+    margin: 0 auto;
+    max-width: 100%;
+    width: auto;
+  }
+}
+
+.button-align {
+  @include baseline(zeta, $bodytype, 2, 2, all);
+}
+
+.group {
+
+  &:before {
+    background-color: $head;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+  }
+
+  .title {
+    color: $headingColour;
+
+    &:hover:before {
+      color: $linkColour;
+    }
+
+    &:before {
+      color: $head;
+      content: "\00A7";
+      display: inline;
+      margin-right: 5px;
+      -webkit-transition: color 0.2s;
+      -moz-transition: color 0.2s;
+      -ms-transition: color 0.2s;
+      -o-transition: color 0.2s;
+      transition: color 0.2s;
+
+      @include breakpoint(break-3) {
+        position: absolute;
+        left: 0;
+      }
+    }
+  }
+}
